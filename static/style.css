@@ -1,0 +1,117 @@
+:root {
+    --bg-color: linear-gradient(135deg, #1e1e2f, #252542);
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-color);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Exemplo de cor dinâmica baseada no clima */
+body.clouds { background: linear-gradient(135deg, #3d4e5f, #2c3e50); }
+body.clear { background: linear-gradient(135deg, #4e73df, #224abe); }
+body.rain { background: linear-gradient(135deg, #203a43, #2c5364); }
+
+.container {
+    width: 380px;
+    padding: 30px;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #4e73df;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card { margin-top: 30px; }
+.temp { font-size: 3rem; font-weight: bold; }
+.desc { opacity: 0.8; margin-bottom: 15px; }
+
+input {
+    margin-top: 20px; /* Empurra a barra de pesquisa para baixo */
+    width: 100%;
+    padding: 12px;
+}
+
+.container {
+    width: 90%;          /* Ocupa 90% da tela em dispositivos pequenos */
+    max-width: 400px;    /* Mas não passa de 400px em telas grandes */
+    padding: 30px;
+    /* ... seu código de glassmorphism ... */
+}
+
+/* Definição da animação */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplica a animação no Card de resultado */
+.card {
+    animation: subir 0.6s ease-out;
+}
+
+/* Animação suave para o botão ao passar o mouse */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05); /* Aumenta levemente */
+    background: #3a5bbd;
+    box-shadow: 0 0 15px rgba(78, 115, 223, 0.4);
+}
+
+body {
+    background: linear-gradient(-45deg, #1e1e2f, #252542, #2c3e50, #000000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Isso altera o texto de exemplo (placeholder) em todos os navegadores */
+input::placeholder {
+    color: white;
+    opacity: 0.7; /* Uma leve transparência fica mais elegante, mas você pode deixar 1 se quiser branco total */
+}
+
+input::-webkit-input-placeholder { color: white; }
+input:-ms-input-placeholder { color: white; }
+input::-moz-placeholder { color: white; opacity: 1; }
