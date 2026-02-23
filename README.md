@@ -2,8 +2,6 @@
 
 O **ClimaSync** é uma aplicação web moderna que sincroniza você com o tempo em tempo real. Utilizando a API do OpenWeather, o app fornece dados meteorológicos com uma interface elegante baseada em **Glassmorphism**.
 
-![ClimaSync Preview](![Uploading climasync.png…]()
-
 ## 🚀 Funcionalidades
 
 - **Busca em Tempo Real:** Dados atualizados de qualquer cidade do mundo.
